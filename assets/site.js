@@ -1,6 +1,52 @@
-function copyText(text,id){const el=document.getElementById(id);const done=()=>{if(el){const old=el.textContent;el.textContent="Copied";setTimeout(()=>el.textContent=old,1600)}};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(done).catch(()=>fallback(text,done))}else{fallback(text,done)}}
-function fallback(text,done){const t=document.createElement("textarea");t.value=text;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");done()}catch{window.prompt("Copy this text:",text)}t.remove()}
-function copyAudit(){copyText("I’d like the free 1-page Revenue Leak Audit. Business: [BUSINESS]. Website: [URL].","auditBtn")}
-document.addEventListener("DOMContentLoaded",()=>{const toggle=document.querySelector(".nav-toggle");const nav=document.querySelector(".nav-links");if(toggle&&nav){toggle.addEventListener("click",()=>{nav.classList.toggle("open");toggle.setAttribute("aria-expanded",nav.classList.contains("open")?"true":"false");toggle.setAttribute("aria-label",nav.classList.contains("open")?"Close navigation":"Open navigation")});nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")))}
-const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")}),{threshold:.12});document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());document.querySelectorAll(".nav-links a").forEach(a=>{if(a.pathname===location.pathname)a.setAttribute("aria-current","page")});});
+(function () {
+  const path = (location.pathname.split("/").pop() || "index.html").replace(/^\s*$/, "index.html");
+  const links = [
+    ["index.html", "Home"],
+    ["sales.html", "System"],
+    ["workflows.html", "Workflows"],
+    ["hubspot.html", "HubSpot"],
+    ["docs.html", "Docs"],
+    ["prompts.html", "Prompts"],
+    ["launch.html", "Launch"],
+  ];
+  const header = document.querySelector("[data-site-header]");
+  if (header) {
+    header.innerHTML = `
+      <a class="skip" href="#main">Skip to content</a>
+      <div class="wrap nav">
+        <a class="brand" href="index.html">AI Revenue <span>Product Factory</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+        <nav class="nav-links" id="nav-links">
+          ${links.map(([href, label]) => `<a href="${href}"${href === path || (path === "" && href === "index.html") ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
+          <a class="btn btn-primary nav-cta" href="index.html#audit">Request audit</a>
+        </nav>
+      </div>`;
+    const btn = header.querySelector(".nav-toggle");
+    const nav = header.querySelector(".nav-links");
+    btn.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  }
+  const footer = document.querySelector("[data-site-footer]");
+  if (footer) {
+    footer.innerHTML = `<div class="wrap site-footer">
+      <div>AI Revenue Product Factory · Find the leak before buying more leads.</div>
+      <div>No invented results. Evidence first.</div>
+    </div>`;
+  }
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const sel = btn.getAttribute("data-copy");
+      const el = document.querySelector(sel);
+      if (!el) return;
+      try {
+        await navigator.clipboard.writeText(el.innerText);
+        btn.textContent = "Copied";
+        setTimeout(() => { btn.textContent = "Copy"; }, 1600);
+      } catch {
+        btn.textContent = "Select text";
+      }
+    });
+  });
+})();
