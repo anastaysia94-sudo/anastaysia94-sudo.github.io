@@ -1,1 +1,41 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Prompt Pack — AI Revenue Product Factory</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="site-nav"><div class="wrap nav-inner"><a class="brand" href="index.html">AI Revenue Product Factory</a><nav class="nav-links"><a href="index.html">Home</a><a href="workflows.html">Workflows</a><a href="prompts.html">Prompts</a><a href="launch.html">Launch</a><a href="hubspot.html">HubSpot</a><a href="docs.html">Docs</a><a class="nav-cta" href="sales.html">See $297 system</a></nav></div></header><main><section class="hero"><div class="wrap"><p class="eyebrow">15 production prompts</p><h1>Research, package, sell, fulfill, learn.</h1><p>Every prompt is built around the same evidence-first rule: separate observed facts from hypotheses and never invent outcomes.</p></div></section><section class="section"><div class="wrap"><div class="prompt-tools"><label class="sr-only" for="promptSearch">Search prompts</label><input id="promptSearch" type="search" placeholder="Search the production library…" autocomplete="off"></div><div id="promptList"></div></div></section></main><footer class="site-footer"><div class="wrap"><a href="index.html">Home</a> · <a href="sales.html">Sales page</a></div></footer><script>const P=[["01 • Opportunity Research","Research this business problem: [PROBLEM]. Buyer: [BUYER]. Find recurring questions, objections, urgent moments, desired outcomes, current alternatives and evidence that people seek solutions. Separate observed facts from hypotheses. Output: problem statement, buyer language, evidence, monetization paths, competition risks and a testable product angle."],["02 • Opportunity Score","Score [IDEA] from 1–10 for Demand, Momentum, Intent, Monetization, Product Fit, Speed, Differentiation and Competition. Explain every score in one sentence. Produce an internal score and list what evidence would change it."],["03 • Prospect Fit","Given this public business information: [DATA]. Identify only observable fit signals. Do not claim hidden problems. Map the business to the most relevant offer and write a one-sentence rationale."],["04 • One-Page Audit","Create a one-page audit for [BUSINESS] around [OFFER]. Include observed signal, likely workflow gap, what to inspect, questions to ask, quick win and next-step offer. Mark assumptions clearly."],["05 • Personalized Outreach","Write a concise first-touch message for [BUSINESS]. Use only these public facts: [FACTS]. Lead with the operational problem, not AI hype. Offer a free one-page audit. No exaggerated claim, no guaranteed result, no fake personalization."],["06 • Follow-Up","Write three follow-ups for [PROSPECT] after [MESSAGE]. Each should add new value, stay concise and make it easy to say yes or no. Do not guilt, pressure or fabricate urgency."],["07 • Discovery Call","Create 10 discovery questions for [BUSINESS TYPE] that diagnose missed calls, response time, quote follow-up, booking, no-shows, reactivation, reviews and manual admin. Then provide a 5-minute diagnosis script."],["08 • Proposal","Turn these findings into a proposal for [BUSINESS]. Include current-state summary, recommended system, deliverables, implementation sequence, investment, assumptions and success measures. Keep ROI language as a hypothesis, not a promise."],["09 • SOP Builder","Convert this recurring task into a simple SOP: [TASK]. Output trigger, inputs, steps, AI step, human review, QA, exception handling and completion definition."],["10 • Content Atomizer","Turn this real customer question/problem: [QUESTION] into one article, three Facebook posts, three LinkedIn posts, five short-video hooks, one email, one FAQ and one CTA. Keep the language buyer-centered."],["11 • Offer Builder","Create a productized service around [PROBLEM]. Give: name, one-line promise, ideal buyer, deliverables, timeline, price range, exclusions, proof needed, guarantee language to avoid and upsells."],["12 • Case Study Builder","Using only these verified facts: [FACTS], write a case study with baseline, intervention, observed result, limitation and next step. Never invent revenue numbers or attribution."],["13 • HubSpot Activity Summarizer","Summarize this CRM activity history: [ACTIVITY]. Return current stage, buyer intent, objections, next best action, task to create and what not to assume."],["14 • Fulfillment QA","Audit this deliverable against its promised scope: [SCOPE] and [DELIVERABLE]. Check completeness, clarity, consistency, factual support, client-specific details and handoff readiness. Return Pass / Fix with exact corrections."],["15 • Experiment Designer","Create a 48-hour test for [OFFER] aimed at [AUDIENCE]. Define hypothesis, channel, message, sample, metric, target, stop condition and learning decision. Do not use guaranteed outcomes."]];document.getElementById("promptList").innerHTML=P.map((p,i)=>'<article class="card" style="margin-bottom:18px"><span class="tag">'+String(i+1).padStart(2,"0")+'</span><h3>'+p[0]+'</h3><div class="prompt">'+p[1]+'</div><div class="copy-row"><button class="copy" onclick=copyText('+JSON.stringify(p[1])+',"b'+i+'") id="b'+i+'">Copy</button></div></article>').join("");</script><script>document.getElementById("promptSearch").addEventListener("input",function(){var q=this.value.toLowerCase();document.querySelectorAll("#promptList .card").forEach(function(card){card.hidden=q&&!card.innerText.toLowerCase().includes(q)})});</script><script src="assets/site.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompt library — production assets</title>
+  <meta name="description" content="Evidence-first prompts for diagnosis, packaging, sales, and delivery." />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <header class="site-header" data-site-header></header>
+  <main id="main" class="wrap">
+    <section class="hero">
+      <p class="kicker">Library</p>
+      <h1>Prompts as assets, not vibes.</h1>
+      <p class="lede">Each block names a category and a job. Copy it. Do not add claims the source did not contain.</p>
+    </section>
+    <article class="prompt">
+      <header><div><span class="badge d">Diagnosis</span><h3>One-page leak map</h3></div><button class="copy" type="button" data-copy="#p1">Copy</button></header>
+      <pre id="p1">Map this business path using only stated facts: Lead → Response → Quote → Booking → Follow-up → Reactivation.
+For each step: owner, tool, typical delay, what “done” means.
+Mark at most one step as the suspected leak and list the evidence. If evidence is missing, say so.</pre>
+    </article>
+    <article class="prompt">
+      <header><div><span class="badge d">Package</span><h3>System from one break</h3></div><button class="copy" type="button" data-copy="#p2">Copy</button></header>
+      <pre id="p2">Turn this single operational break into a $297 system outline: SOP, 8 prompts, HubSpot notes, 14-day measurement card.
+Do not invent ROI. Title the product as the job, not as “AI.”</pre>
+    </article>
+    <article class="prompt">
+      <header><div><span class="badge d">Sales</span><h3>Audit reply</h3></div><button class="copy" type="button" data-copy="#p3">Copy</button></header>
+      <pre id="p3">Write a 1-page audit reply. Sections: Observed path. Suspected break. Evidence. What we would install. What we will not claim. Offer $297 system or $497 install. No testimonials.</pre>
+    </article>
+    <article class="prompt">
+      <header><div><span class="badge d">Delivery</span><h3>Handoff Doc</h3></div><button class="copy" type="button" data-copy="#p4">Copy</button></header>
+      <pre id="p4">Draft a Google Doc handoff: what was installed, where it lives, who owns each step, how to count for 14 days, when to stop the experiment.</pre>
+    </article>
+  </main>
+  <footer data-site-footer></footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>
