@@ -1,1 +1,34 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HubSpot Build Map — AI Revenue Product Factory</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="site-nav"><div class="wrap nav-inner"><a class="brand" href="index.html">AI Revenue Product Factory</a><nav class="nav-links"><a href="index.html">Home</a><a href="workflows.html">Workflows</a><a href="prompts.html">Prompts</a><a href="launch.html">Launch</a><a href="hubspot.html">HubSpot</a><a href="docs.html">Docs</a><a class="nav-cta" href="sales.html">See $297 system</a></nav></div></header><main><section class="hero"><div class="wrap"><p class="eyebrow">CRM operating system</p><h1>HubSpot owns the buyer journey.</h1><p>Notion stores research and product knowledge. HubSpot stores contacts, companies, deals, tasks, activities, and pipeline movement.</p><div class="notice"><strong>Current status:</strong> the HubSpot connector is connected and live CRM access has been verified. The portal is not fully onboarded.</div></div></section><section class="section"><div class="wrap"><h2>Pipeline</h2><table class="price-table"><thead><tr><th>Stage</th><th>Entry</th><th>Next action</th></tr></thead><tbody><tr><td>New Lead</td><td>Prospect identified</td><td>Create/verify contact + company</td></tr><tr><td>Contacted</td><td>First touch sent</td><td>Create next touch</td></tr><tr><td>Replied</td><td>Prospect responded</td><td>Qualify need, timing, authority</td></tr><tr><td>Qualified</td><td>Fit + real problem confirmed</td><td>Send audit or book call</td></tr><tr><td>Audit/Preview</td><td>Diagnostic delivered</td><td>Proposal step</td></tr><tr><td>Call/Meeting</td><td>Conversation happened</td><td>Record decision + next action</td></tr><tr><td>Proposal</td><td>Commercial proposal sent</td><td>Set follow-up date</td></tr><tr><td>Negotiation</td><td>Scope/price discussed</td><td>Resolve open issue</td></tr><tr><td>Closed Won</td><td>Agreement + payment confirmed</td><td>Create fulfillment tasks</td></tr><tr><td>Closed Lost</td><td>No decision</td><td>Record reason + learning</td></tr></tbody></table></div></section><section class="section"><div class="wrap"><h2>Properties</h2><div class="grid"><div class="card"><h3>Contact</h3><ul class="list"><li>offer_interest</li><li>pain_hypothesis</li><li>source_detail</li><li>preferred_channel</li></ul></div><div class="card"><h3>Company</h3><ul class="list"><li>industry</li><li>service_area</li><li>fit_signal</li><li>offer_match</li></ul></div><div class="card"><h3>Deal</h3><ul class="list"><li>offer</li><li>deal_value</li><li>opportunity_score</li><li>primary_problem</li><li>audit_sent</li><li>proposal_sent</li><li>google_doc_folder</li><li>lost_reason</li></ul></div></div></div></section><section class="section"><div class="wrap"><h2>Automation map</h2><div class="flow"><div class="node">New lead</div><div class="arrow">→</div><div class="node">Task</div><div class="arrow">→</div><div class="node">First touch</div><div class="arrow">→</div><div class="node">Reply</div><div class="arrow">→</div><div class="node">Audit</div><div class="arrow">→</div><div class="node">Proposal</div><div class="arrow">→</div><div class="node">Won</div><div class="arrow">→</div><div class="node">Google Docs</div></div></div></section></main><footer class="site-footer"><div class="wrap">HubSpot connector: VERIFIED · portal onboarding: INCOMPLETE · custom stages/properties/automations: MANUAL SETUP REQUIRED</div></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HubSpot — verified vs designed</title>
+  <meta name="description" content="HubSpot is connected. Designed objects still need manual setup." />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <header class="site-header" data-site-header></header>
+  <main id="main" class="wrap">
+    <section class="hero">
+      <p class="kicker">CRM layer</p>
+      <h1>HubSpot is connected. The pipeline is not magic.</h1>
+      <p class="lede">The connector can read CRM objects. Designed properties and pipelines still have to be created in the portal.</p>
+    </section>
+    <section class="section">
+      <table class="table">
+        <thead><tr><th>Item</th><th>State</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>HubSpot connector</td><td><span class="badge v">Verified</span></td><td>Available to this workspace.</td></tr>
+          <tr><td>Contacts / deals APIs</td><td><span class="badge v">Verified</span></td><td>Readable via connector.</td></tr>
+          <tr><td>Custom properties</td><td><span class="badge d">Designed</span></td><td>kit_interest, problem_tuesday, source_detail.</td></tr>
+          <tr><td>Leak / Field OS pipeline</td><td><span class="badge m">Manual setup required</span></td><td>Spec only until created in portal.</td></tr>
+          <tr><td>Form embed on site</td><td><span class="badge m">Manual setup required</span></td><td>Audit form uses mailto until form ID exists.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <footer data-site-footer></footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>
