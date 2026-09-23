@@ -1,0 +1,1 @@
+function copyText(text,id){navigator.clipboard?.writeText(text).then(()=>{const el=document.getElementById(id);if(el){el.textContent="Copied";setTimeout(()=>el.textContent="Copy",1600)}}).catch(()=>window.prompt("Copy this text:",text))}function copyAudit(){copyText("I’d like the free 1-page Revenue Leak Audit. Business: [BUSINESS]. Website: [URL].","auditBtn")}
