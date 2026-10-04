@@ -11,4 +11,4 @@ Updated: 2026-09-25
 ## 2026-10-04 PT — repo maintenance notes (The Albino · Pit Keeper)
 1. Get Yellin's review of `credentials/`; if it holds anything sensitive, remove it and rotate whatever it exposed.
 2. Review/merge licence PR #1.
-3. Approve the draft ledger row XW0188 / P172.
+3. Ledger row P173 / XW0189 already exists in the latest ledger copies; no new row needed.
