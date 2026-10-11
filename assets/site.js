@@ -49,4 +49,11 @@
       }
     });
   });
+  // Consent-gated measurement is a local adapter, not a Google tag installer.
+  // It will not transmit anything until the owner configures GA4 and consent.
+  const measurement = document.createElement("script");
+  measurement.src = "assets/measurement.js";
+  measurement.async = false;
+  document.body.appendChild(measurement);
+
 })();
